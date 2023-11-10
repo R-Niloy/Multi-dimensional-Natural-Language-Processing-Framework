@@ -19,10 +19,34 @@ def open_file(file_name):
 #Gets word count from array of strings
 def w_count(x):
   wcount = 0
+
+  t_wcount = 0
+  c_wcount=0
+
+  t_sentences = 0
+  c_sentences = 0
+
   for sentence in x:
     wcount = wcount + len(sentence.split()) - 1
+    if sentence[0] == 'C':
+      c_wcount= c_wcount + len(sentence.split()) - 1  
+      c_sentences+=1
+    else:
+      t_wcount= t_wcount + len(sentence.split()) - 1  
+      t_sentences+=1
+
+
+  print(f"t_sentences: {t_sentences}")
+  print(f"c_sentences: {c_sentences}")
+  print(f"x: {len(x)}")
+
   wcount = wcount / len(x)
+  c_wcount = c_wcount / c_sentences
+  t_wcount = t_wcount / t_sentences
+
   print(wcount)
+  print(f"Client Words/Turn: {c_wcount}")
+  print(f"Therapist Words/Turn: {t_wcount}")
   return wcount
 
 file_name = "content/DataSets.zip"
@@ -36,6 +60,10 @@ id = [0] * 258
 label = [0] * 258
 Sent = [0] * 258
 Length = [0] * 258
+
+T_avg_Length = [0] * 258
+C_avg_Length = [0] * 258
+
 count = 0
 #Opens csv file read filenames from file path may need to be changed
 with open('DataSets/labeleddata/testlabels.csv', newline='') as csvfile:
