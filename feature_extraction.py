@@ -95,6 +95,11 @@ def ratio_turns(y):
   print(f"t_sentences: {c_sentences}")
   return ratio
 
+#ratio of WPT_T  /  WPT_C
+def ratio_words(y):
+  ratio = w_countT(y)/w_countC(y)
+  return ratio
+
 
 file_name = "content/DataSets.zip"
 
@@ -110,6 +115,7 @@ C_avg_Length = [0] * 257
 T_turns_arr = [0] * 257
 C_turns_arr = [0] * 257
 ratio_turns_arr = [0] * 257
+ratio_words_arr = [0] * 257
 
 count = 0
 #Opens csv file read filenames from file path may need to be changed
@@ -127,12 +133,13 @@ with open('DataSets/labeleddata/testlabels.csv', newline='') as csvfile:
       T_turns_arr[count] = T_turns(y)
       C_turns_arr[count] = C_turns(y)
       ratio_turns_arr[count] = ratio_turns(y)
+      ratio_words_arr[count] = ratio_words(y)
       count = count + 1
 
 count = 0
 #Opens empty csv and writes labeled data
 with open('labeled.csv', 'w', newline='') as csvfile:
-    fieldnames = ['id', 'label', 'T_Words/Turn', 'C_Words/Turn', 'T_Turns', 'C_Turns','Ratio of turns']
+    fieldnames = ['id', 'label', 'T_Words/Turn', 'C_Words/Turn', 'T_Turns', 'C_Turns','Ratio of turns','T and C WPT Ratio']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     count = 0
     writer.writeheader()
@@ -142,5 +149,7 @@ with open('labeled.csv', 'w', newline='') as csvfile:
                         'C_Words/Turn': C_avg_Length[count], 
                         'T_Turns': T_turns_arr[count], 
                         'C_Turns': C_turns_arr[count], 
-                        'Ratio of turns': ratio_turns_arr[count]})
+                        'Ratio of turns': ratio_turns_arr[count],
+                        'T and C WPT Ratio': ratio_words_arr[count]
+                        })
       count = count + 1
