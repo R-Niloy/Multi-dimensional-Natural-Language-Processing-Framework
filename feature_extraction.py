@@ -69,8 +69,7 @@ def T_turns(y):
 
   print(f"t_sentences: {t_sentences}")
   return t_sentences
-
-#Returns turns taken by Client
+#returns turns taken by client
 def C_turns(y):
   c_sentences = 0
 
@@ -80,6 +79,22 @@ def C_turns(y):
 
   print(f"t_sentences: {c_sentences}")
   return c_sentences
+
+#returns ratio of turns T/C 
+def ratio_turns(y):
+  c_sentences = 0
+  t_sentences = 0
+
+  for sentence in y:
+    if sentence[0] == 'C':
+      c_sentences+=1
+    else:
+      t_sentences+=1
+
+  ratio = t_sentences/c_sentences
+  print(f"t_sentences: {c_sentences}")
+  return ratio
+
 
 file_name = "content/DataSets.zip"
 
@@ -94,6 +109,7 @@ T_avg_Length = [0] * 257
 C_avg_Length = [0] * 257
 T_turns_arr = [0] * 257
 C_turns_arr = [0] * 257
+ratio_turns_arr = [0] * 257
 
 count = 0
 #Opens csv file read filenames from file path may need to be changed
@@ -110,16 +126,21 @@ with open('DataSets/labeleddata/testlabels.csv', newline='') as csvfile:
       C_avg_Length[count] = w_countC(y)
       T_turns_arr[count] = T_turns(y)
       C_turns_arr[count] = C_turns(y)
+      ratio_turns_arr[count] = ratio_turns(y)
       count = count + 1
 
 count = 0
-print(T_avg_Length)
 #Opens empty csv and writes labeled data
 with open('labeled.csv', 'w', newline='') as csvfile:
-    fieldnames = ['id', 'label', 'T_Words/Turn', 'C_Words/Turn', 'T_Turns', 'C_Turns']
+    fieldnames = ['id', 'label', 'T_Words/Turn', 'C_Words/Turn', 'T_Turns', 'C_Turns','Ratio of turns']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     count = 0
     writer.writeheader()
     for at in range(len(id)):
-      writer.writerow({'id': id[count], 'label': label[count], 'T_Words/Turn': T_avg_Length[count], 'C_Words/Turn': C_avg_Length[count], 'T_Turns': T_turns_arr[count], 'C_Turns': C_turns_arr[count]})
+      writer.writerow({'id': id[count], 'label': label[count],
+                        'T_Words/Turn': T_avg_Length[count], 
+                        'C_Words/Turn': C_avg_Length[count], 
+                        'T_Turns': T_turns_arr[count], 
+                        'C_Turns': C_turns_arr[count], 
+                        'Ratio of turns': ratio_turns_arr[count]})
       count = count + 1
