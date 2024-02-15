@@ -2,6 +2,7 @@
 from zipfile import ZipFile
 import csv
 import numpy as np
+import math
 import pandas as pd
 #NOTe  TO SELF RESEARCH BASIC TRANSCIPT based CLASSIFCIATION MODELS FOR OTHER TOPICS FOR MORE FEATURE IDEAS.
 
@@ -40,6 +41,8 @@ def stdw_countT(y):
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(df)
   print(f"STD Therapist Words/Turn: {df['Word Count'].std()}")
+  if(math.isnan(df['Word Count'].std())):
+      return None
   return (df['Word Count'].std())
 
 def skeww_countT(y):
@@ -49,6 +52,8 @@ def skeww_countT(y):
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(df)
   print(f"skew Therapist Words/Turn: {df['Word Count'].skew()}")
+  if(math.isnan(df['Word Count'].skew())):
+    return None
   return (df['Word Count'].skew())
 
 def kurtw_countT(y):
@@ -58,6 +63,8 @@ def kurtw_countT(y):
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(df)
   print(f"kurt Therapist Words/Turn: {df['Word Count'].kurt()}")
+  if(math.isnan(df['Word Count'].kurt())):
+    return None
   return (df['Word Count'].kurt())
 
 #Gets Average words/turn Client
@@ -75,6 +82,8 @@ def stdw_countC(y):
     if sentence[0] == 'C':
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(f"std Client Words/Turn: {df['Word Count'].std()}")
+  if(math.isnan(df['Word Count'].std())):
+    return None
   return df['Word Count'].std()
 
 def skeww_countC(y):
@@ -83,6 +92,8 @@ def skeww_countC(y):
     if sentence[0] == 'C':
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(f"skew Client Words/Turn: {df['Word Count'].skew()}")
+  if(math.isnan(df['Word Count'].skew())):
+    return None
   return df['Word Count'].skew()
 
 def kurtw_countC(y):
@@ -91,6 +102,8 @@ def kurtw_countC(y):
     if sentence[0] == 'C':
       df.loc[len(df)] = [len(sentence.split()) - 1]
   print(f"kurt Client Words/Turn: {df['Word Count'].kurt()}")
+  if(math.isnan(df['Word Count'].kurt())):
+    return None
   return df['Word Count'].kurt()
 
 #Returns turns taken by therapist
