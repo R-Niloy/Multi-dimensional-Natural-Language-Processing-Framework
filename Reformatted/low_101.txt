@@ -1,0 +1,21 @@
+P1	No, not really.
+P2	Why, what happened?
+P1	Well, since I had a relapse back in the spring, I've noticed I've had a lot more trouble with my walking, and a lot of problems with my memory. And I'm just tired all the time.
+P2	Well how long ago did this all begin?
+P1	After that relapse about two or three months ago.
+P2	Well have you been taking your Rubiff reguarly?
+P1	No, not really. I don't feel like it's helping much.
+P2	Well when did you stop taking it?
+P1	Well, first I started by just stretching it out. I was only taking it every three to four days, and then I totally stopped at about a month ago.
+P2	So your symptoms may be because you stopped your drug?
+P1	I don't think so. I didn't stop taking it until after my walking started to go. After that I did everything you told me to do. I took my shots religiously, a lot of help it's been.
+P2	I think you should go back on the drug. We know from clinical trial that it helps to slow progression. Going off it is only going to make things worse.
+P1	I don't know if I believe that. I mean if it does, it hasn't helped me.
+P2	Well, the data's clear! I think the first thing we need to do is get you back on the drug. We also need to change the way you're thinking about your MS and the drug. Drug's not a cure. It's only gonna slow progression. You know if you weren't on this drug, your symptoms would've come back sooner. And you need to think of the last two years that you've had without major symptoms as a success.
+P1	Well, that's hard to do when you feel like I do.
+P2	I know, I see this all the time with my patients.
+P1	So is this normal?
+P2	I wouldn't say "normal". MS is different for everyone.
+P1	So what about me?
+P2	Well that's hard to say. So I'll see you in three months and you can start going back on the drug. Any questions?
+P1	No

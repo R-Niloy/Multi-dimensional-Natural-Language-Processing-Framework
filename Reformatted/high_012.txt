@@ -1,0 +1,65 @@
+P1	I pick up a prescription
+P2	okay and what's your name
+P1	seedorf Larry seed or
+P2	hi mr. seed or if my name is Dave it's nice to meet you I'm your pharmacist here today
+P1	okay
+P2	are you picking up for yourself today or for somebody else
+P1	yes for me
+P2	for you great I see you have a new prescription here so what I'd like to do is take about five minutes just go over some key points about this medication how to take it and answer any questions that you might have so you're feeling comfortable with this medication that's not alright
+P1	yeah
+P2	I want you have a seat here sure so to start off I'm just going to verify your information real quick so we said your name's Larry seedorf is your date of birth let's see
+P1	129 68 okay
+P2	and it looks like are you still on same address as before
+P1	yeah I'm pinnacle
+P2	pinnacle okay and I have here according your profile that you have a sensitivity of statins which is the type of medications is that correct
+P1	yeah
+P2	okay and according to your profile it looks like you're taking likes in Aprill hydrochlorothiazide and simvastatin which is one of those medications
+P1	yeah I'm not taking this instead
+P2	not taking any more okay great no problem then what happened when you took the statin
+P1	uh you know I started to get a really bad pain in my legs and that's what led me to go to the doctor you ran tests and that's when he said I had sensitivity to it
+P2	okay well hopefully you won't have any issues like that with this one I'll be sure to go over this with you okay
+P1	okay
+P2	so the name of this medication is gem fib Raziel it's the generic for low pay
+P1	okay
+P2	now before I go into more detail about this medication what concerns do you have that you'd like me to address with you here today
+P1	honestly the the pain in my legs I'm a landscaper so it made it so that I couldn't work so I mean that's my biggest concern the doctor said you know that it would help to be on this and
+P2	certainly I understand that and hopefully you won't have the same issues with this one I will talk about that before I get to that though what did your doctor say this medication is used for
+P1	lower cholesterol you know something about triglycerides
+P2	we see this a lot with lowering cholesterol especially triglycerides which are a type of cholesterol
+P1	okay
+P2	now how did your doctor tell you that you're going to use this medication
+P1	twice a day
+P2	twice a day so you'll take one tablet which is 600 milligrams and just like it says on here it's actually two tablets so you'll be taking a total of 1200 milligrams and you'll be doing that by mouth twice a day so the best time to take it is about a half hour before breakfast and then again a half hour before dinner if you can remember that
+P1	yeah
+P1	okay okay cool
+P2	okay now one important thing about this medication is this is in addition to diet and exercise so keep doing that healthy diets all that exercise to help lower your cholesterol as well
+P1	all right okay
+P2	now what side effects did your doctor tell you that this medication made cause
+P1	I don't know I mean he you know he did say that hopefully would be better for my my legs right
+P2	hopefully it will now it's still possible it may cause that you are in kind of a high dose most people do fine on it I mean it's a different it works in a different way than the statin so if you experience that just let your doctor know but most people do do fine
+P1	okay
+P2	now other side effects you might experience you might have a little bit of stomach upset if that happens just take it with food and that should help okay
+P1	okay
+P2	as far as storing it keep it in this bottle that'll protect it from light and from moisture keep it at room temperature you know nothing fancy
+P1	yeah
+P2	and you do have three refills on here
+P1	okay
+P2	so once you're getting low go ahead give us a call we'll be happy to get you your refill
+P1	okay
+P2	all right great now I've given you a lot of information yeah just to be sure that I've explained everything how are you going to take this medicate take it
+P1	what two pills twice day before meals yeah
+P2	right you've got it okay good what questions do you have for me about this medication
+P1	I mean you know I mean I just hope that doesn't cause the pain I mean obviously you know it's frustrating I'm good not have any problems and then start taking medicine and starting to have problems
+P2	absolutely I understand your frustration try to stick with it you know because it is important we lower your cholesterol but like I said if you start to notice any muscle pain let your doctor know there's other options he may be able to switch you and most people do do just fine on it
+P1	okay sounds good
+P2	all right great what other questions do you have for me
+P1	I think that's it I think we're good
+P2	all right very good so just to kind of summarize make sure that you kind of stick with it if you do start to notice any muscle pain make sure you report that right away
+P1	yeah
+P2	take it a half hour before breakfast and again a half hour before dinner if you can but it's important just to remember to take that twice a day
+P1	Oh kind
+P2	of regularly great alright if anything else comes up at all our numbers right here on the bottle give us a call again my name is Dave and I'd be happy to help you any of the other pharmacists would also be willing to help you as well just in case I'm not in so go ahead and give us a call
+P1	great all right good
+P2	thank you very much I really appreciate your time today
+P1	yeah all right
+P2	thank you mr. seeders take care you

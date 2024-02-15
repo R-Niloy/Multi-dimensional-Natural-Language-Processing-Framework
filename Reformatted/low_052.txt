@@ -1,0 +1,21 @@
+None	
+P2	leann I've noticed that it's been quite  some time since your daughter's last  dental checkup
+P1	I know I feel like I just  can't find the time
+P2	I know that you know  that dental health is really important  especially for robbery and you've just  got to try to make it a priority
+P1	I understand it's a priority but I do also  have to work to you know
+P2	I know and work can make a dental  appointment difficult yeah
+P1	it makes it  very hard especially when I have to work  days which
+P2	I see which makes a dental  visit almost impossible it sure does  could you talk to your boss about it?
+P1	I don't think that's gonna work my boss is  not very flexible
+P2	So what do you think will help
+P1	I wish there was a dentist with evening  hours
+P2	you know we do have some  appointments that are later in the  afternoon and we have appointments early  in the morning or I could give you a  referral
+P1	okay but listen how often do  you really have to come in there just  baby teeth right that's right
+P2	but the  baby teeth are really important for for  eating and for speech development and to  help ensure that the permanent teeth  come in properly
+P1	but the teeth aren't in  bad shape
+P2	so tell me what  you're thinking about the baby teeth
+P1	well as long as she can eat fine and  they look ok what does it matter they're  just baby teeth the new teeth will come  in eventually is there some other reason
+P2	you're right nutrition is important but  the baby teeth are also important in  speech and in space maintenance and just  in helping the kids feel better about  the way they look
+P1	ok so it's to prevent  problems later than
+P2	right it's all about  prevention so what would you like to do  now?
+P1	well I think then maybe we could  come in for an appointment before work  what appointment times do you have you?

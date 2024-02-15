@@ -1,6 +1,7 @@
 
 from zipfile import ZipFile
 import csv
+import numpy as np
 import pandas as pd
 #NOTe  TO SELF RESEARCH BASIC TRANSCIPT based CLASSIFCIATION MODELS FOR OTHER TOPICS FOR MORE FEATURE IDEAS.
 
@@ -23,41 +24,74 @@ def open_file_allLines(file_name):
   return y
 
 #Gets Average words/turn Therapist
-def w_countT(y):
-  wcount = 0
-
-  t_wcount = 0
-  t_sentences = 0
-
+def meanw_countT(y):
+  df = pd.DataFrame(columns = ['Word Count'])
   for sentence in y:
     if sentence[0] == 'T':
-      t_wcount= t_wcount + len(sentence.split()) - 1  
-      t_sentences+=1
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(df)
+  print(f"Therapist Words/Turn: {df['Word Count'].mean()}")
+  return (df['Word Count'].mean())
 
-  print(f"t_sentences: {t_sentences}")
+def stdw_countT(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'T':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(df)
+  print(f"STD Therapist Words/Turn: {df['Word Count'].std()}")
+  return (df['Word Count'].std())
 
-  t_wcount = t_wcount / t_sentences
+def skeww_countT(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'T':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(df)
+  print(f"skew Therapist Words/Turn: {df['Word Count'].skew()}")
+  return (df['Word Count'].skew())
 
-  print(f"Therapist Words/Turn: {t_wcount}")
-  return t_wcount
+def kurtw_countT(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'T':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(df)
+  print(f"kurt Therapist Words/Turn: {df['Word Count'].kurt()}")
+  return (df['Word Count'].kurt())
 
 #Gets Average words/turn Client
-def w_countC(y):
-  c_wcount = 0
-  c_sentences = 0
-
+def meanw_countC(y):
+  df = pd.DataFrame(columns = ['Word Count'])
   for sentence in y:
     if sentence[0] == 'C':
-      c_wcount= c_wcount + len(sentence.split()) - 1  
-      c_sentences+=1
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(f"Client Words/Turn: {df['Word Count'].mean()}")
+  return df['Word Count'].mean()
 
-  print(f"c_sentences: {c_sentences}")
+def stdw_countC(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'C':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(f"std Client Words/Turn: {df['Word Count'].std()}")
+  return df['Word Count'].std()
 
-  c_wcount = c_wcount / c_sentences
+def skeww_countC(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'C':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(f"skew Client Words/Turn: {df['Word Count'].skew()}")
+  return df['Word Count'].skew()
 
-  print(c_wcount)
-  print(f"Client Words/Turn: {c_wcount}")
-  return c_wcount
+def kurtw_countC(y):
+  df = pd.DataFrame(columns = ['Word Count'])
+  for sentence in y:
+    if sentence[0] == 'C':
+      df.loc[len(df)] = [len(sentence.split()) - 1]
+  print(f"kurt Client Words/Turn: {df['Word Count'].kurt()}")
+  return df['Word Count'].kurt()
 
 #Returns turns taken by therapist
 def T_turns(y):
@@ -97,7 +131,7 @@ def ratio_turns(y):
 
 #ratio of WPT_T  /  WPT_C
 def ratio_words(y):
-  ratio = w_countT(y)/w_countC(y)
+  ratio = meanw_countT(y)/meanw_countC(y)
   return ratio
 
 
@@ -111,7 +145,16 @@ with ZipFile(file_name, 'r') as zip:
 id = [0] * 257
 label = [0] * 257
 T_avg_Length = [0] * 257
+T_std_Length = [0] * 257
+T_skew_Length = [0] * 257
+T_kurt_Length = [0] * 257
+
+
 C_avg_Length = [0] * 257
+C_std_Length = [0] * 257
+C_skew_Length = [0] * 257
+C_kurt_Length = [0] * 257
+
 T_turns_arr = [0] * 257
 C_turns_arr = [0] * 257
 ratio_turns_arr = [0] * 257
@@ -128,8 +171,16 @@ with open('DataSets/labeleddata/testlabels.csv', newline='') as csvfile:
       y = open_file_allLines("DataSets/"+row["id"])
       id[count] = row["id"]
       label[count] = row["label"]
-      T_avg_Length[count] = w_countT(y)
-      C_avg_Length[count] = w_countC(y)
+      T_avg_Length[count] = meanw_countT(y)
+      T_std_Length[count] = stdw_countT(y)
+      T_skew_Length[count] = skeww_countT(y)
+      T_kurt_Length[count] = kurtw_countT(y)
+
+      C_avg_Length[count] = meanw_countC(y)
+      C_std_Length[count] = stdw_countC(y)
+      C_skew_Length[count] = skeww_countC(y)
+      C_kurt_Length[count] = kurtw_countC(y)
+
       T_turns_arr[count] = T_turns(y)
       C_turns_arr[count] = C_turns(y)
       ratio_turns_arr[count] = ratio_turns(y)
@@ -139,14 +190,23 @@ with open('DataSets/labeleddata/testlabels.csv', newline='') as csvfile:
 count = 0
 #Opens empty csv and writes labeled data
 with open('labeled.csv', 'w', newline='') as csvfile:
-    fieldnames = ['id', 'label', 'T_Words/Turn', 'C_Words/Turn', 'T_Turns', 'C_Turns','Ratio of turns','T and C WPT Ratio']
+    fieldnames = ['id', 'label', 'Mean_T_Words/Turn', 'STD_T_Words/Turn', 'Skew_T_Words/Turn', 'Kurt_T_Words/Turn', 'Mean_C_Words/Turn',
+                  'STD_C_Words/Turn', 'Skew_C_Words/Turn', 'Kurt_C_Words/Turn','T_Turns', 'C_Turns','Ratio of turns','T and C WPT Ratio']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     count = 0
     writer.writeheader()
     for at in range(len(id)):
       writer.writerow({'id': id[count], 'label': label[count],
-                        'T_Words/Turn': T_avg_Length[count], 
-                        'C_Words/Turn': C_avg_Length[count], 
+                        'Mean_T_Words/Turn': T_avg_Length[count], 
+                        'STD_T_Words/Turn': T_std_Length[count], 
+                        'Skew_T_Words/Turn': T_skew_Length[count], 
+                        'Kurt_T_Words/Turn': T_kurt_Length[count], 
+
+                        'Mean_C_Words/Turn': C_avg_Length[count], 
+                        'STD_C_Words/Turn': C_std_Length[count], 
+                        'Skew_C_Words/Turn': C_skew_Length[count], 
+                        'Kurt_C_Words/Turn': C_kurt_Length[count], 
+
                         'T_Turns': T_turns_arr[count], 
                         'C_Turns': C_turns_arr[count], 
                         'Ratio of turns': ratio_turns_arr[count],
